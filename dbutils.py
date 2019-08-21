@@ -1,11 +1,11 @@
 from pymongo import MongoClient
 
-MONGO_URI=""
-client=MongoClient(MONGO_URI)
+MONGO_URI1="mongodb+srv://admin:admin@cluster0-lhhnh.mongodb.net/test?retryWrites=true&w=majority"
+client=MongoClient(MONGO_URI1)
 
-def db_connect(MONGO_URI, db_name, col_name):
+def db_connect(MONGO_URI1, db_name, col_name):
 	#crear variable cliente
-	client=MongoClient(MONGO_URI)
+	client=MongoClient(MONGO_URI1)
 	database=client[db_name]
 	collection=database[col_name]
 	return collection

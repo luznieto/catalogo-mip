@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Administrator CMIP</title>
+  <title>Experto Catálogo MIP</title>
 
   <!-- Custom fonts for this template-->
   <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -54,39 +54,118 @@
     <div id="content-wrapper">
       <div class="container-fluid">
 
+        <!--Form of input for new biologic agent-->
+        <br><br>
+    <h1> Catálogo MIP </h1>
+      <br><br>
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputAgente">Nombre</label>
+          <input type="text" class="form-control" id="inputAgente" placeholder="Agente de Control..." required>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputTipo">Tipo</label>
+          <select id="inputTipo" class="form-control" required>
+            <option selected>Selecciona...</option>
+            <option>Bacteria</option>
+            <option>Hongo</option>
+            <option>Levadura</option>
+            <option>Planta</option>
+            <option>Extracto Vegetal</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputDescrip">Descripcion</label>
+          <select id="inputDescrip" class="form-control" required>
+            <option selected>Selecciona...</option>
+            <option>Bactericida</option>
+            <option>Fungicida</option>
+            <option>Insecticida</option>
+            <option>Refugio de fauna auxiliar</option>
+            <option>Atrayente de insectos depredadores y parasitoides</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputIssue">Orgaismo o enfermedad objetivo</label>
+          <input type="text" class="form-control" id="inputIssue" placeholder="Control sobre..." required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputCulture">Cultivos o usos</label>
+          <input type="text" class="form-control" id="inputCulture" placeholder="Actua en..." required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputProduct">Nombre del producto comercial</label>
+          <input type="text" class="form-control" id="inputProduct" placeholder="Producto comercial..." required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputCertified">Certificado o Registro</label>
+          <input type="text" class="form-control" id="inputCertified" placeholder="Respaldo como producto ecológico" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success mx-auto">Subir</button>
+      {% if flag %}
+          <div class="alert alert-dark alert-dismissible fade show" role="alert">
+            <strong>¡Gracias por tu aportacion!</strong> Pronto recibirás más noticias.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <script>
+                document.location.hash = '#signup';
+            </script>
+          </div>
+      {% endif %}
+    </form>
+    <br><br><br>
+
         <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Emails registrados</div>
+            Base de datos de Agentes de Control Biológico</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Nombre</th>
-                    <th>Email</th>
+                    <th>Agente de control</th>
+                    <th> Tipo</th>
+                    <th>Descripción</th>
+                    <th>Organismo objetivo o enfermedad</th>
+                    <th>Cultivos</th>
+                    <th>Producto</th>
+                    <th>Registro</th>
+                    <th>Disponibilidad en tienda</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>Nombre</th>
-                    <th>Email</th>
+                    <th>Agente de control</th>
+                    <th> Tipo</th>
+                    <th>Descripción</th>
+                    <th>Organismo objetivo o enfermedad</th>
+                    <th>Cultivos</th>
+                    <th>Producto</th>
+                    <th>Registro</th>
+                    <th>Disponibilidad en tienda</th>
                   </tr>
                 </tfoot>
                 <tbody>
 
-
-                  <!-- 
-                  HERE!
-                  ADD NAMES AND EMAILS IN FRONTEND: -->
-                  {% for user in users %}
+                  {% for ocb in ocbs %}
                   <tr>
-                    <td>{{ user['name'] }}</td>
-                    <td>{{ user['email'] }}</td>
+                    <td>{{ ocb['agente'] }}</td>
+                    <td>{{ ocb['tipo'] }}</td>
+                    <td>{{ ocb['issue'] }}</td>
+                    <td>{{ ocb['culture'] }}</td>
+                    <td>{{ ocb['product'] }}</td>
+                    <td>{{ ocb['certified'] }}</td>
                   </tr>
                   {% endfor %}
-                 
 
                 </tbody>
               </table>
@@ -102,7 +181,7 @@
       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Mi idea millonaria 2019</span>
+            <span>Copyright &copy; IBITA 2019</span>
           </div>
         </div>
       </footer>

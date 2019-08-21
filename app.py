@@ -1,9 +1,14 @@
 from dbutils import db_connect
 from dbutils import db_insert_user
 from dbutils import db_find_all
-from dbutils import MONGO_URI
+from dbutils import MONGO_URI1
+from dbocb import dbocb_connect
+from dbocb import db_insert_ocb
+from dbocb import dbocb_find_all
+from dbocb import MONGO_URI2
 from form import EmailForm
 from form import LoginForm
+from form import OCBForm
 from flask import Flask
 from flask import request
 from flask import render_template
@@ -11,7 +16,8 @@ from flask import render_template
 
 app = Flask(__name__)
 
-users=db_connect(MONGO_URI, 'mi_app', 'users')
+users=db_connect(MONGO_URI1, 'mi_app', 'users')
+ocbs=dbocb_connect(MONGO_URI2, 'mip_app', 'ocbs')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -39,7 +45,7 @@ def index():
 
 
 @app.route('/admin', methods=['GET', 'POST'])
-def login():
+def login1():
     form = LoginForm(request.form)
     login_error = False
 
@@ -52,6 +58,54 @@ def login():
         else:
             login_error = True
     return render_template('login.html', login_error=login_error)
+
+
+@app.route('/experto', methods=['GET', 'POST'])
+def login2():
+    form = LoginForm(request.form)
+    login_error = False
+
+    if len(form.errors):
+        print(form.errors)
+    if request.method == 'POST':
+        if form.username.data == 'experto' and form.password.data == 'experto':
+            registered = dbocb_find_all(users)
+            return render_template('tables_ocb.html', users=registered)
+        else:
+            login_error = True
+    return render_template('login.html', login_error=login_error)
+
+def experto():
+    form = OCBForm(request.form)
+    flag = False
+    registro = None
+
+    if len(form.errors):
+        print(form.errors)
+    if request.method == 'POST':
+        agente = form.agente.data
+        tipo = form.tipo.data
+        descrip = form.tipo.data
+        issue= form.issue.data
+        culture = form.culture.data
+        product = form.product.data
+        certified = form.certified.data
+        if agente != '' and tipo != '' and descrip != '' and issue != '' and culture != '' and product != '' and certified != '':
+            ocb={
+            "agente": agente,
+            "tipo": tipo,
+            "descrip": descrip,
+            "issue": issue,
+            "culture": culture,
+            "product": product,
+            "certified": certified
+            }
+            r = db_insert_ocb(ocbs, ocb)
+            print("Inserción:",r)
+            flag = True
+
+    return render_template('tables_ocb.html', flag=flag, registro=registro)
+
 
 
 @app.errorhandler(404)
