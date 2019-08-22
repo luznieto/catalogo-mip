@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-MONGO_URI2="mongodb+srv://experto:<experto>@cluster0-vtd2f.azure.mongodb.net/test?retryWrites=true&w=majority"
+MONGO_URI2="mongodb+srv://experto:experto@cluster0-vtd2f.azure.mongodb.net/test?retryWrites=true&w=majority"
 agentes=MongoClient(MONGO_URI2)
 
 def dbocb_connect(MONGO_URI2, db_name, col_name):

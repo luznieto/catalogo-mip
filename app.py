@@ -78,14 +78,14 @@ def login2():
 def experto():
     form = OCBForm(request.form)
     flag = False
-    registro = None
+    agente = None
 
     if len(form.errors):
         print(form.errors)
     if request.method == 'POST':
         agente = form.agente.data
         tipo = form.tipo.data
-        descrip = form.tipo.data
+        descrip = form.descrip.data
         issue= form.issue.data
         culture = form.culture.data
         product = form.product.data
@@ -101,10 +101,10 @@ def experto():
             "certified": certified
             }
             r = db_insert_ocb(ocbs, ocb)
-            print("Inserción:",r)
+            print("Insercion:",r)
             flag = True
 
-    return render_template('tables_ocb.html', flag=flag, registro=registro)
+    return render_template('tables_ocb.html', flag=flag, agente=agente)
 
 
 
