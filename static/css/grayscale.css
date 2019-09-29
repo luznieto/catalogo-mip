@@ -92,8 +92,8 @@
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.3)), color-stop(75%, rgba(22, 22, 22, 0.7)), to(#161616)), url("../img/bg2.jpg");
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/bg2.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), color-stop(30%, rgba(255, 255, 255, 0.3)), to(#3AD671)), url("../img/bg.jpg");
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.7) 80%, #3AD671 100%), url("../img/bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -168,8 +168,8 @@
 
 .about-section {
   padding-top: 10rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#161616), color-stop(75%, rgba(22, 22, 22, 0.9)), to(rgba(22, 22, 22, 0.8)));
-  background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#28a745), color-stop(75%, rgba(40, 167, 69, 0.9)), to(rgba(40, 167, 69, 0.8)));
+  background: linear-gradient(to bottom, #3AD671 0%, rgba(40, 167, 69, 0.9) 75%, rgba(40, 167, 69, 0.8) 100%);
 }
 
 .about-section p {
@@ -209,8 +209,8 @@
 
 .signup-section {
   padding: 10rem 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/ft.jpg");
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/ft.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("https://horizontal.mx/wp-content/uploads/2019/01/campo.jpg");
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("https://horizontal.mx/wp-content/uploads/2019/01/campo.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;

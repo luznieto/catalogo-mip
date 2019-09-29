@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Cátalogo MIP</title>
+  <title>IBITA</title>
 
   <!-- Bootstrap core CSS -->
   <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Inicio</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top" style="color:#161616">Inicio</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -40,16 +40,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Manejo Integrado</a>
+            <a class="nav-link js-scroll-trigger" href="#about" style="color:#161616">¿Quíenes somos?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#projects">Control Biológico</a>
+            <a class="nav-link js-scroll-trigger" href="#projects" style="color:#161616">FAQS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#search">Búsqueda</a>
+            <a class="nav-link js-scroll-trigger" href="#search" style="color:#161616">Índice</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#signup">Contacto</a>
+            <a class="nav-link js-scroll-trigger" href="#signup" style="color:#161616">Contacto</a>
           </li>
         </ul>
       </div>
@@ -60,22 +60,23 @@
   <header class="masthead">
     <div class="container d-flex h-100 align-items-center">
       <div class="mx-auto text-center">
-        <h1 class="mx-auto my-0 text-uppercase">Catálogo MIP</h1>
-        <h2 class="text-white-50 mx-auto mt-2 mb-5">Control Biológico Integrado</h2>
-        <a href="#search" class="btn btn-success js-scroll-trigger">Empecemos</a>
+        <img src="static/img/Ibita.png" width="500%" class="img-fluid" alt="">
+        <h2 class="mx-auto mt-2 mb-5" style="color:#38572a"><b>Tu guía de manejo en agricultura orgánica</b></h2>
+        
       </div>
     </div>
   </header>
 
   <!-- About Section -->
-  <section id="about" class="about-section text-center">
+  <section id="about" class="about-section">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2 class="text-white mb-4">¿Que es el MIP?</h2>
-          <p class="text-white-50">En agricultura se entiende como manejo integrado de plagas (MIP) o control integrado/integral de plagas a una estrategia que usa una gran variedad de métodos complementarios: físicos, mecánicos, químicos, biológicos, genéticos, legales y culturales para el control de plagas.</p>
-          
-          <img src="static/img/mariquita.png" width="25%" class="img-fluid" alt="">
+        <div class="col mx-auto  text-center">
+          <h2 class="text-white mb-4"><b>¿Quienes somos?</b></h2>
+          <p class="text-brown-50"><b>Somos un equipo interesado en establecer una relación directa entre el agricultor y el conocimiento. Nuestra misión es poner a tu alcance la información necesaria para combatir plagas y enfermedades para una producción orgánica.</b></p>
+        </div>
+        <div class="col mx-auto">
+          <img src="https://i1.wp.com/elblogdefagro.com.mx/wp-content/uploads/2019/03/agricultor-mexicano.png?ssl=1" class="rounded float-right" width="55%" alt="...">
         </div>
       </div>
       
@@ -94,8 +95,8 @@
         </div>
         <div class="col-xl-4 col-lg-5">
           <div class="featured-text text-center text-lg-left">
-            <h4>Control biológico</h4>
-            <p class="text-black-50 mb-0">La madre naturaleza es sabia, posee seres vivos que, mediante su existencia, controlan enfermedades y la vivencia de las plagas en las plantas. El control biológico es un método de control de plagas, enfermedades y malezas que consiste en utilizar organismos vivos con objeto de controlar las poblaciones de otro organismo. </p>
+            <h4>¿Control biológico?</h4>
+            <p class="text-black-50 mb-0">La madre naturaleza es sabia, posee seres vivos que, mediante su existencia, controlan enfermedades y la vivencia de las plagas en las plantas. El control biológico utiliza estos microorganismos, insectos y platas con el objetivo de controlar las poblaciones de otro organismo. </p>
           </div>
         </div>
       </div>
@@ -160,8 +161,10 @@
   <section id="search" class="search-section">
     <div class="container-fluid">
       <center>
-        <div class="title-cmip">
-           <img src="static/img/catalogo_mip2.png" width="5%" hspace="5" vspace="5" style="float: none;"/><h1 class="text-white">Catálogo de Control Biológico Integrado</h1>
+        <div class="title-cmip" style="background: #28a745">
+           <img src="static/img/catalogo_mip2.png" width="5%" hspace="5" vspace="5" style="float: none">
+           
+           <h1 class="text-white">Índice</h1>
            <br>
          </div>
          <br>
@@ -234,10 +237,10 @@
         <div class="col-md-10 col-lg-8 mx-auto text-center">
 
           <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-          <h2 class="text-white mb-5">¡Suscríbete para ser usuario beta!</h2>
+          <h2 class="text-white mb-5">¡Cóntactanos!</h2>
           {% if flag %}
           <div class="alert alert-dark alert-dismissible fade show" role="alert">
-            <strong>¡Gracias por suscribirte {{ name.split(' ')[0] }}!</strong> Pronto recibirás más noticias.
+            <strong>¡Gracias por contactarnos! {{ name.split(' ')[0] }}!</strong> Pronto recibirás más noticias.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -252,7 +255,7 @@
               <input name="name" type="text" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputName" placeholder="Introduce tu nombre" required>
               <input name="email" type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Introduce tu email" required>
             </div>
-            <button type="submit" class="btn btn-success mx-auto">Suscribirme</button>
+            <button type="submit" class="btn btn-success mx-auto">Enviar</button>
           </form>
 
         </div>
@@ -302,6 +305,16 @@
           </div>
         </div>
       </div>
+
+      <div>
+        <center>
+          <br>
+        <p class="text-white">Proyecto generado en:</p>
+        <br>
+        <img src="http://communities.techstars.com/images/logos/sw-logo-black.png" width="30%" hspace="5" vspace="5" style="float: none">
+       </center>
+      </div>
+
 
       <div class="social d-flex justify-content-center">
         <a href="#" class="mx-2">
